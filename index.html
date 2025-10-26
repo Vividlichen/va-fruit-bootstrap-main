@@ -123,138 +123,186 @@
 </section>
 
 
-<!-- ============ 限時活動（Figma 精準版） ============ -->
-<section id="promo" class="promo-figma">
-  <div class="promo-stage">
-    <!-- 標題：限時活動 + 黃底線 -->
-    <div class="promo-title">
-      <h2 class="zh-serif">限時活動</h2>
-      <span class="title-underline-yellow"></span>
-    </div>
-
-    <!-- 左側：超大圓圖 + 橘色虛線 + 白色標語(橫幅) -->
-    <div class="promo-left">
-      <div class="ring-outer-big">
-        <div class="ring-dash-big"></div>
-        <div class="ring-img-big"
-             style="background-image:url('assets/images/promo-peach.png');"></div>
-      </div>
-
-      <!-- 白色小橫幅 + 白字說明 -->
-      <div class="promo-badge">
-        <div class="ribbon zh-serif">限時 5 天 ｜ 售完為止</div>
-        <p>今年夏天最甜的旅行，就藏在這一箱桃子裡。<br>
-          來自山谷果園的白鳳桃，剛剛好熟透、還帶著露水的香氣，限量出航！</p>
-      </div>
-    </div>
-
-    <!-- 右側：白色大膠囊卡片 -->
-    <div class="promo-card">
-      <img class="promo-topicon" src="assets/images/promo-peach-small.png" alt="">
-      <h3 class="zh-serif">桃木箱出航</h3>
-      <p>每箱內含 6～8 顆精選鮮桃（大果裝）<br>
-        天然松木原箱包裝，可重複使用<br>
-        附贈卡片一張，寫給你最想分享甜味的人<br>
-        當日產地直送，冷藏配送，新鮮不等人！</p>
-      <a href="order.html" class="btn-cta zh-serif">立即購買</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============ 相關報導 ============ -->
-<section id="about" class="section-pad bg-ivory position-relative overflow-hidden">
-  <img src="assets/images/decor-orange.png" class="decor-orange d-none d-lg-block" alt="">
+<!-- ============ 相關報導（Figma 精準版） ============ -->
+<section id="about" class="report-figma">
   <div class="container-xxl">
-    <div class="section-title text-center">
-      <h2 class="mb-2">相關報導</h2>
-      <span class="title-underline"></span>
+
+    <!-- 標題 + 黃底線 -->
+    <div class="report-heading text-center position-relative">
+      <h2 class="zh-serif">相 關 報 導</h2>
+      <span class="underline-yellow"></span>
     </div>
 
-    <div class="report-box bg-white p-4 p-lg-5 mt-3">
-      <ul class="list-unstyled mb-0 small text-muted report-list">
-        <li>島上的一畝果園，背後是一位農人的時間……</li>
-        <li>讓孩子吃水果，也能聽故事！果島小舖把水果變回會說話的角色……</li>
-        <li>果島小舖：只賣新鮮的，從果園到你手中最短距離的甜</li>
-        <li>水果的旅行越短，風味就越真實：果島小舖的產地直送哲學</li>
+    <!-- 白色大膠囊 1296px 寬、左右各 110px 內距，內文 1076px -->
+    <div class="report-capsule">
+
+      <ul class="report-list">
+        <li class="report-item">
+          <!-- 32px 小圖標（可用 SVG，顏色 #EC5317） -->
+          <span class="bullet" aria-hidden="true">
+           <span class="bullet">
+            <img src="assets/images/decor-orange.png" width="32" height="32" alt="">
+           </span>
+
+          </span>
+          <span class="report-text">島上的一顆果實，背後是一位農人的願望⋯⋯</span>
+        </li>
+        <li class="divider"></li>
+
+        <li class="report-item">
+          <span class="bullet" aria-hidden="true">
+             <span class="bullet">
+            <img src="assets/images/decor-orange.png" width="32" height="32" alt="">
+           </span>
+          </span>
+          <span class="report-text">讓孩子吃水果，也能聽故事！果島小舖把水果變成會說話的角色⋯⋯</span>
+        </li>
+        <li class="divider"></li>
+
+        <li class="report-item">
+          <span class="bullet" aria-hidden="true">
+             <span class="bullet">
+            <img src="assets/images/decor-orange.png" width="32" height="32" alt="">
+           </span>
+          </span>
+          <span class="report-text">果島小舖：只賣新鮮的，從果園到你手中最短距離的甜</span>
+        </li>
+        <li class="divider"></li>
+
+        <li class="report-item">
+          <span class="bullet" aria-hidden="true">
+              <span class="bullet">
+            <img src="assets/images/decor-orange.png" width="32" height="32" alt="">
+           </span>
+          </span>
+          <span class="report-text">水果的旅行越短，風味就越真實：果島小舖的產地直送哲學</span>
+        </li>
       </ul>
+
     </div>
+  </div>
+
+  <!-- 右下角大橘子裝飾圖（527×445） -->
+  <img src="assets/images/big-orange-deco.png" alt="" class="report-fruit d-none d-lg-block">
+
+
+
+</section>
+
+
+<!-- ============ 交通方式（Figma 精準版） ============ -->
+<section id="traffic" class="traffic-figma">
+  <div class="container-xxl">
+
+    <!-- 標題 + 黃底線 -->
+    <div class="text-center position-relative mb-4">
+      <h2 class="zh-serif traffic-title">交 通 方 式</h2>
+      <span class="traffic-underline"></span>
+    </div>
+
+    <!-- 地圖（1296 × 440，圓角 128） + 定位點 64px -->
+    <div class="traffic-mapwrap mx-auto">
+      <img src="assets/images/map-demo.png" alt="地圖示意" class="w-100 h-auto traffic-mapimg">
+      <span class="traffic-pin" aria-hidden="true">
+        <!-- 64x64 定位點 -->
+        <svg viewBox="0 0 64 64" width="64" height="64">
+          <path d="M32 2c-11 0-20 9-20 20 0 16 20 40 20 40s20-24 20-40C52 11 43 2 32 2z" fill="#EC5317"/>
+          <circle cx="32" cy="24" r="10" fill="#fff"/>
+        </svg>
+      </span>
+    </div>
+
+    <!-- 兩則說明（左右 546/563 寬，字級 24/36，橘色虛線 2px） -->
+    <div class="row justify-content-center gx-5 gy-4 traffic-rows">
+      <div class="col-lg-5">
+        <div class="traffic-item d-flex align-items-start gap-3">
+          <span class="traffic-dot" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="16" fill="#EC5317"/></svg>
+          </span>
+          <p class="traffic-text mb-0">
+            搭乘大眾交通工具：民權西路捷運 1 號出口右轉，步行約 10 分鐘。
+          </p>
+        </div>
+        <div class="traffic-dash"></div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="traffic-item d-flex align-items-start gap-3">
+          <span class="traffic-dot" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="16" fill="#EC5317"/></svg>
+          </span>
+          <p class="traffic-text mb-0">
+            自行開車：民權交流道（往台北市區）→ 富錦街步行約 5 分鐘。
+          </p>
+        </div>
+        <div class="traffic-dash"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ============ 交通方式 ============ -->
-<section class="section-pad">
+<!-- ============ 顧客回饋（Figma 精準版） ============ -->
+<section id="review" class="review-figma text-center text-dark">
   <div class="container-xxl">
-    <div class="section-title text-center">
-      <h2 class="mb-2">交通方式</h2>
-      <span class="title-underline"></span>
+
+    <!-- 標題 -->
+    <div class="position-relative mb-5">
+      <h2 class="zh-serif fw-bold mb-0">顧客回饋</h2>
+      <span class="underline-yellow"></span>
     </div>
 
-    <div class="row align-items-center g-4 mt-1">
-      <div class="col-lg-8">
-        <img src="assets/images/map-demo.png" class="w-100 rounded-4" alt="地圖示意">
-      </div>
-      <div class="col-lg-4">
-        <ul class="list-unstyled small text-muted lh-lg mb-0">
-          <li>搭乘大眾交通工具：民權西路捷運 1 號出口右轉，步行約 10 分鐘。</li>
-          <li>自行開車：民權交流道（往台北市區）→ 富錦街步行約 5 分鐘。</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 顧客回饋 ============ -->
-<section class="section-pad bg-ivory">
-  <div class="container-xxl">
-    <div class="section-title text-center">
-      <h2 class="mb-2">顧客回饋</h2>
-      <span class="title-underline"></span>
-    </div>
-
-    <div class="row g-4 justify-content-center mt-2">
+    <!-- 四個膠囊卡 -->
+    <div class="row justify-content-center g-4">
+      <!-- 卡1 -->
       <div class="col-xl-3 col-md-6">
-        <div class="review-card text-center bg-white p-4 h-100">
-          <div class="stars mb-2">★★★★★</div>
+        <div class="review-card mx-auto bg-white p-4">
+          <div class="stars mb-2 text-orange">★★★★★</div>
           <img src="assets/images/avatar-ya.png" alt="Ya" class="avatar mb-2">
-          <div class="fw-semibold">Ya</div>
+          <div class="fw-semibold">Va</div>
           <p class="small text-muted mb-0">水果新鮮好甜！</p>
         </div>
       </div>
 
+      <!-- 卡2 -->
       <div class="col-xl-3 col-md-6">
-        <div class="review-card text-center bg-white p-4 h-100">
-          <div class="stars mb-2">★★★★☆</div>
+        <div class="review-card mx-auto bg-white p-4">
+          <div class="stars mb-2 text-orange">★★★★☆</div>
           <img src="assets/images/avatar-una.png" alt="Una" class="avatar mb-2">
           <div class="fw-semibold">Una</div>
           <p class="small text-muted mb-0">顧客服務超級貼心！</p>
         </div>
       </div>
 
+      <!-- 卡3 -->
       <div class="col-xl-3 col-md-6">
-        <div class="review-card text-center bg-white p-4 h-100">
-          <div class="stars mb-2">★★★★★</div>
+        <div class="review-card mx-auto bg-white p-4">
+          <div class="stars mb-2 text-orange">★★★★★</div>
           <img src="assets/images/avatar-lin.png" alt="Lin" class="avatar mb-2">
-          <div class="fw-semibold">Lin</div>
+          <div class="fw-semibold">Leo</div>
           <p class="small text-muted mb-0">下單秒送！還想回購。</p>
         </div>
       </div>
 
+      <!-- 卡4 -->
       <div class="col-xl-3 col-md-6">
-        <div class="review-card text-center bg-white p-4 h-100">
-          <div class="stars mb-2">★★★★☆</div>
+        <div class="review-card mx-auto bg-white p-4">
+          <div class="stars mb-2 text-orange">★★★★☆</div>
           <img src="assets/images/avatar-aja.png" alt="Aja" class="avatar mb-2">
-          <div class="fw-semibold">Aja</div>
+          <div class="fw-semibold">AJ</div>
           <p class="small text-muted mb-0">走過路過不要錯過。</p>
         </div>
       </div>
     </div>
 
-    <div class="text-center mt-4">
-      <a href="product.html" class="link-more">查看更多小編嚴選 →</a>
+    <!-- 查看更多 -->
+    <div class="mt-5">
+      <a href="product.html" class="review-more zh-serif">查看更多小編嚴選 →</a>
     </div>
+
   </div>
 </section>
+
 
 <!-- ============ Footer ============ -->
 <footer class="bg-orange text-white pt-5 pb-4">

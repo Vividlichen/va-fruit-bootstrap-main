@@ -533,3 +533,588 @@ footer a:hover{ opacity:.85; }
   .promo-card p{ position:static; width:auto; font-size:18px; line-height:28px; margin:0 auto 16px; text-align:center; }
   .promo-card .btn-cta{ position:static; width:240px; height:64px; margin:0 auto; font-size:24px; line-height:32px; }
 }
+
+
+/* =========================
+   相關報導（Figma 精準版）
+   ========================= */
+:root{
+  --orange: #EC5317;          /* Primary/primary */
+  --ivory-2: #FBF8F2;         /* Background/primary（此區背景） */
+  --yellow: #FDE731;          /* Primary/secondary */
+  --text-secondary: #514841;  /* Text/secondary */
+  --title-primary: #9C7652;   /* Text/primary（標題字色） */
+}
+
+/* 區塊背景、上下間距、溢出隱藏以便裝飾圖半露 */
+.report-figma{
+  background:#FBF8F2;
+  position:relative;
+  padding:96px 0;
+  overflow:hidden;
+}
+
+/* 標題（Noto Serif TC 40/48，字距 0.2em）+ 黃底線 224×17 */
+.report-figma .report-heading h2{
+  font-family:"Noto Serif TC","Noto Serif","Noto Serif CJK TC",serif;
+  font-weight:700;
+  font-size:40px;
+  line-height:48px;
+  letter-spacing:0.2em;
+  color:#9C7652;
+  margin:0;
+}
+
+.report-figma .underline-yellow{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-12px;
+  width:224px;
+  height:17px;
+  background:#FDE731;
+  border-radius:8px;
+  display:block;
+}
+
+/* 白色大膠囊：寬 1296、圓角 128；內距左右各 110px 讓內文寬 1076 */
+.report-figma .report-capsule{
+  max-width:1296px;
+  margin:48px auto 0;
+  background:#fff;
+  border-radius:128px;
+  padding:48px 110px; /* 1296 - 1076 = 220；左右各 110 */
+  position:relative;
+}
+
+/* 列表容器（拿掉預設 ul 樣式） */
+.report-figma .report-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* 單列：高度 34、左右 icon 與文字 gap=16（Figma） */
+.report-figma .report-item{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:34px;
+}
+
+/* 32px 圓點（用 SVG 或圖片都可）；若要用圖片可改成 background-image */
+.report-figma .bullet{
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* 文字：Noto Sans 28/34、色 #514841，與 Figma 相同 */
+.report-figma .report-text{
+  font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  font-weight:400;
+  font-size:28px;
+  line-height:34px;
+  color:#514841;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* 橘色虛線分隔（2px dashed），寬度跟內文等寬 1076 */
+.report-figma .divider{
+  border-bottom:2px dashed var(--orange);
+  margin:8px 0;   /* 與 Figma gap=16 對齊（上下各 8） */
+}
+
+/* 右下角橘子裝飾圖（527×445） */
+.report-figma .report-fruit{
+  position:absolute;
+  right:-60px;     /* 讓水果稍微露出畫面內 */
+  bottom:-120px;   /* 與 Figma 位置接近 */
+  width:527px;
+  height:auto;
+  pointer-events:none;
+  user-select:none;
+}
+
+/* --------------- RWD --------------- */
+@media (max-width: 1199.98px){
+  .report-figma{ padding:72px 0; }
+  .report-figma .report-capsule{
+    border-radius:72px;
+    padding:40px 48px; /* 內容不再強制 1076，改成流動 */
+  }
+  .report-figma .report-text{
+    font-size:22px; line-height:30px;
+    white-space:normal;
+  }
+  .report-figma .divider{ border-bottom-width:2px; }
+  .report-figma .report-fruit{ right:-120px; bottom:-160px; width:460px; }
+}
+
+@media (max-width: 767.98px){
+  .report-figma{ padding:56px 0; }
+  .report-figma .report-heading h2{
+    font-size:28px; line-height:36px; letter-spacing:0.16em;
+  }
+  .report-figma .underline-yellow{ width:160px; height:12px; bottom:-10px; }
+  .report-figma .report-capsule{
+    border-radius:32px;
+    padding:24px;
+  }
+  .report-figma .bullet{
+    width:20px;height:20px; flex-basis:20px;
+  }
+  .report-figma .report-text{ font-size:18px; line-height:28px; }
+  .report-figma .divider{ margin:6px 0; }
+  .report-figma .report-fruit{ right:-160px; bottom:-180px; width:360px; }
+}
+
+/* --- Figma 對齊補丁：相關報導 --- */
+
+/* 內文容器寬 1076（1296 - 左右 110） */
+.report-figma .report-capsule{
+  max-width:1296px;
+  margin:48px auto 0;
+  background:#fff;
+  border-radius:128px;
+  padding:48px 110px;
+}
+
+/* 橘色虛線 2px dashed，寬度跟內文同寬；最後一條不顯示 */
+.report-figma .divider{
+  width:1076px;
+  border-bottom:2px dashed #EC5317;
+  margin:8px 0;
+}
+.report-figma .divider:last-child{ display:none; }
+
+/* 小橘點微調對齊基線 */
+.report-figma .bullet{
+  width:32px; height:32px; flex:0 0 32px;
+  display:inline-flex; align-items:center; justify-content:center;
+  transform:translateY(1px);
+}
+
+/* 右下角大水果裝飾圖（用現有 feedback-apples.png） */
+.report-figma .report-fruit{
+  position:absolute;
+  right:-60px;    /* 稍微探出畫面 */
+  bottom:-120px;
+  width:527px;    /* Figma 是 527×445 */
+  height:auto;
+  pointer-events:none; user-select:none;
+}
+
+/* RWD 微調 */
+@media (max-width:1199.98px){
+  .report-figma .report-capsule{ border-radius:72px; padding:40px 48px; }
+  .report-figma .divider{ width:auto; }
+  .report-figma .report-fruit{ right:-120px; bottom:-160px; width:460px; }
+}
+@media (max-width:767.98px){
+  .report-figma .report-capsule{ border-radius:32px; padding:24px; }
+  .report-figma .report-fruit{ right:-160px; bottom:-180px; width:360px; }
+}
+
+/* =========================
+   交通方式（Figma 精準版）
+   ========================= */
+:root{
+  --orange:#EC5317;
+  --yellow:#FDE731;
+  --text-secondary:#514841;
+  --title-primary:#9C7652;
+}
+
+.traffic-figma{
+  background:#FFFFFF;        /* Figma: Background/secondary */
+  padding:96px 0 80px;
+}
+
+/* 標題 40/48 + 字距 0.2em + 黃底線 224×17 */
+.traffic-title{
+  font-family:"Noto Serif TC","Noto Serif",serif;
+  font-weight:700;
+  font-size:40px;
+  line-height:48px;
+  letter-spacing:0.2em;
+  color:var(--title-primary);
+  margin:0;
+}
+.traffic-underline{
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  bottom:-12px;
+  width:224px; height:17px;
+  background:var(--yellow);
+  border-radius:8px;
+  display:block;
+}
+
+/* 地圖容器：寬 1296 × 高 440，圓角 128；相對定位放 64px pin */
+.traffic-mapwrap{
+  width:1296px;
+  height:440px;
+  border-radius:128px;
+  overflow:hidden;
+  position:relative;
+  margin-top:48px;
+}
+.traffic-mapimg{ display:block; width:100%; height:100%; object-fit:cover; }
+
+/* 定位點：Figma 位置（大約在地圖中偏右 30%、下 55%） */
+.traffic-pin{
+  position:absolute;
+  left:55%;
+  top:52%;
+  transform:translate(-50%,-50%);
+  width:64px; height:64px;
+  display:inline-block;
+  pointer-events:none; user-select:none;
+}
+
+/* 文字列：字級 24/36、顏色 #514841，左側 32px 圓點，虛線 2px dashed */
+.traffic-text{
+  font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  font-weight:400;
+  font-size:24px;
+  line-height:36px;
+  color:var(--text-secondary);
+}
+.traffic-item .traffic-dot{
+  width:32px; height:32px; flex:0 0 32px;
+  display:inline-flex; align-items:center; justify-content:center;
+  transform:translateY(1px); /* 與文字基線微對齊 */
+}
+
+/* 每欄下的橘色虛線：寬度自適應欄寬；桌機看起來就是 546/563px */
+.traffic-dash{
+  border-bottom:2px dashed var(--orange);
+  margin:16px 0 0;
+}
+
+/* 欄位間距符合 figma gap=160（左右欄中心距），以 gx-5 + 這裡微調寬度達成 */
+.traffic-rows > [class*="col-"]{ }
+
+/* 圓點用圖片時的對齊 */
+.traffic-item .traffic-dot{
+  width:32px; height:32px; flex:0 0 32px;
+  display:inline-flex; align-items:center; justify-content:center;
+  transform:translateY(1px);           /* 與文字基線微對齊 */
+}
+.traffic-item .traffic-dot img{        /* 防止縮放糊邊 */
+  display:block; width:32px; height:32px;
+}
+
+/* 橘色虛線從文字起點開始（避開 32 圓點 + 16 間距 = 48px） */
+.traffic-dash{
+  border-bottom:2px dashed #EC5317;
+  margin:16px 0 0;
+  margin-left:48px;
+  width:calc(100% - 48px);
+}
+
+/* -------- RWD -------- */
+@media (max-width:1399.98px){
+  .traffic-mapwrap{ width:1100px; height:400px; border-radius:96px; }
+  .traffic-pin{ left:56%; top:54%; }
+}
+@media (max-width:1199.98px){
+  .traffic-mapwrap{ width:100%; height:auto; border-radius:72px; }
+  .traffic-mapimg{ height:auto; }
+  .traffic-pin{ left:58%; top:56%; }
+}
+@media (max-width:767.98px){
+  .traffic-figma{ padding:72px 0 64px; }
+  .traffic-title{ font-size:28px; line-height:36px; letter-spacing:0.16em; }
+  .traffic-underline{ width:160px; height:12px; bottom:-10px; }
+  .traffic-text{ font-size:18px; line-height:28px; }
+  .traffic-mapwrap{ border-radius:32px; margin-top:32px; }
+  .traffic-pin{ width:48px; height:48px; }
+}
+
+@media (max-width: 767.98px){
+  .traffic-dash{
+    margin-left:48px;                /* 也可改成 0 看你的偏好 */
+    width:calc(100% - 48px);         /* 改 100% 就會滿寬 */
+  }
+}
+
+
+/* =========================
+   顧客回饋（Figma 精準版）
+   ========================= */
+:root{
+  --orange:#EC5317;
+  --ivory:#FBF8F2;
+  --yellow:#FDE731;
+  --title:#9C7652;
+  --text2:#514841;
+  --card-stroke:#F2EDE6; /* 柔和外框色 */
+}
+
+/* 區塊背景與間距 */
+.reviews-figma{
+  background:var(--ivory);
+  padding:96px 0;
+}
+
+/* 標題 40/48、字距 0.2em、黃底線 224×17（置中） */
+.reviews-figma .reviews-heading h2{
+  font-family:"Noto Serif TC","Noto Serif",serif;
+  font-weight:700;
+  font-size:40px;
+  line-height:48px;
+  letter-spacing:0.2em;
+  color:var(--title);
+}
+.reviews-figma .underline-yellow{
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-12px; width:224px; height:17px; background:var(--yellow);
+  border-radius:8px; display:block;
+}
+
+/* 內容區寬度 1296、卡片間距 24（配合 g-4） */
+.reviews-figma .reviews-row{ max-width:1296px; margin:24px auto 0; }
+
+/* 卡片：306×310、圓角 128、柔和描邊，排版置中 */
+.review-card{
+  width:306px; height:310px;
+  border-radius:128px;
+  border:4px solid var(--card-stroke);
+  box-shadow:none;
+  padding:32px 16px;
+}
+
+/* 星星：Figma 的黃色；基線微調更像設計圖 */
+.review-card .stars{
+  color:var(--yellow);
+  font-size:20px;
+  letter-spacing:0.18em;
+  transform:translateY(2px);
+}
+
+/* 大頭貼 76×76 圓形 */
+.review-card .avatar{
+  width:76px; height:76px; border-radius:50%;
+  object-fit:cover; display:block; margin:0 auto;
+}
+
+/* 名稱（Serif 20/24、0.08em 字距、顏色同標題） */
+.review-card .fw-semibold{
+  font-family:"Noto Serif TC","Noto Serif",serif!important;
+  font-weight:700; font-size:20px; line-height:24px;
+  letter-spacing:0.08em; color:var(--title);
+}
+
+/* 評語（20/30、次要色） */
+.review-card p{
+  font-family:"Noto Sans TC","Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  font-size:20px; line-height:30px; color:var(--text2);
+}
+
+/* 藍色連結下的橘色虛線 242px（Figma） */
+.reviews-figma .reviews-more .more-dash{
+  display:block; width:242px; margin:8px auto 0;
+  border-bottom:2px dashed var(--orange);
+}
+
+/* RWD：中小尺寸降低圓角與字級 */
+@media (max-width:1199.98px){
+  .reviews-figma{ padding:72px 0; }
+  .review-card{ border-radius:72px; width:100%; height:auto; }
+}
+@media (max-width:767.98px){
+  .reviews-figma{ padding:56px 0; }
+  .reviews-figma .reviews-heading h2{ font-size:28px; line-height:36px; letter-spacing:0.16em; }
+  .reviews-figma .underline-yellow{ width:160px; height:12px; bottom:-10px; }
+  .review-card{ border-radius:32px; padding:24px; }
+  .review-card .stars{ font-size:18px; }
+  .review-card p{ font-size:18px; line-height:28px; }
+}
+
+
+/* =========================
+   顧客回饋（Figma 精準版）
+   ========================= */
+.review-figma{
+  background:#FBF8F2 url("../images/feedback-apples.png") center/cover no-repeat;
+  padding:120px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* 標題 + 黃底線 */
+.review-figma h2{
+  font-family:"Noto Serif TC","Noto Serif",serif;
+  font-weight:700;
+  font-size:40px;
+  line-height:48px;
+  letter-spacing:0.2em;
+  color:#9C7652;
+}
+.review-figma .underline-yellow{
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  bottom:-12px;
+  width:224px; height:17px;
+  background:#FDE731;
+  border-radius:8px;
+  display:block;
+}
+
+/* 卡片樣式 */
+.review-card{
+  width:260px;
+  border-radius:128px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.08);
+  transition:transform .3s ease;
+}
+.review-card:hover{ transform:translateY(-6px); }
+
+/* 星星顏色、字體 */
+.text-orange{ color:#EC5317; }
+.review-card .stars{
+  font-size:20px;
+  letter-spacing:2px;
+}
+
+/* 大頭貼 */
+.review-card .avatar{
+  width:64px; height:64px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* 查看更多連結 */
+.review-more{
+  color:#0044cc;
+  font-weight:500;
+  text-decoration:none;
+}
+.review-more:hover{ text-decoration:underline; }
+
+/* RWD */
+@media (max-width:991.98px){
+  .review-card{ border-radius:64px; width:220px; }
+}
+@media (max-width:575.98px){
+  .review-figma{ padding:80px 0; background-position:center top; }
+  .review-card{ border-radius:48px; width:200px; }
+  .review-figma h2{ font-size:28px; line-height:36px; }
+  .review-figma .underline-yellow{ width:160px; height:12px; bottom:-10px; }
+}
+
+/* =========================
+   Footer（Figma 精準版）
+   ========================= */
+.footer-figma{
+  background:#EC5317; /* Primary/orange */
+  height:240px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  font-family:"Noto Sans TC","Noto Sans",system-ui;
+}
+
+/* 左側 LOGO + 文字 */
+.footer-figma .footer-left{
+  display:flex;
+  align-items:center;
+  gap:94px;
+}
+.footer-figma .footer-logo img{
+  width:36px; height:54px;
+}
+.footer-figma .footer-logo .logo-text{
+  font-family:"Noto Serif TC","Noto Serif",serif;
+  font-weight:700;
+  font-size:28px;
+  line-height:34px;
+  letter-spacing:0.16em;
+  color:#fff;
+}
+.footer-figma .footer-info{
+  font-size:16px;
+  line-height:24px;
+  color:#fff;
+}
+
+/* 右側 icon 區 */
+.footer-figma .footer-icons img{
+  width:48px; height:48px;
+  background:#FBF8F2; /* icon 底色 */
+  border-radius:50%;
+  padding:6px;
+  transition:transform .2s ease;
+}
+.footer-figma .footer-icons img:hover{
+  transform:scale(1.1);
+}
+
+/* RWD */
+@media (max-width:991.98px){
+  .footer-figma{
+    height:auto;
+    text-align:center;
+    padding:48px 0;
+  }
+  .footer-figma .footer-left{
+    flex-direction:column;
+    gap:16px;
+  }
+  .footer-figma .footer-right{
+    width:100%;
+  }
+}
+
+
+/* --- Footer 最終微調（Figma 對齊） --- */
+.footer-figma{
+  background:#EC5317;
+  min-height:240px;            /* 保證 240 高 */
+  display:flex;
+  align-items:center;          /* 整區垂直置中 */
+  color:#fff;
+}
+.footer-figma .container-xxl{
+  max-width:1296px;            /* Figma 內容寬 */
+}
+
+.footer-figma .footer-left{
+  display:flex; align-items:center; gap:94px;   /* 左區間距 94px */
+}
+
+.footer-figma .footer-logo img{ width:36px;height:54px; display:block; margin:0 auto 8px; }
+.footer-figma .footer-logo .logo-text{
+  font-family:"Noto Serif TC","Noto Serif",serif;
+  font-weight:700; font-size:28px; line-height:34px; letter-spacing:.16em;
+  color:#fff; text-align:center;
+}
+
+.footer-figma .footer-info{ font-size:16px; line-height:24px; color:#fff; }
+
+/* icon 48px 圓形、奶油白底、順序：LINE → FB */
+.footer-figma .footer-icons{ gap:16px; }
+.footer-figma .footer-icons img{
+  width:48px; height:48px; background:#FBF8F2; border-radius:50%; padding:6px;
+  display:block; transition:transform .18s ease;
+}
+.footer-figma .footer-icons img:hover{ transform:scale(1.06); }
+
+/* 右側文字與對齊 */
+.footer-figma .footer-right{ text-align:right; }
+.footer-figma .footer-right .small{ font-size:16px; line-height:24px; }
+
+/* RWD */
+@media (max-width:991.98px){
+  .footer-figma{ padding:48px 0; }
+  .footer-figma .footer-left{ flex-direction:column; gap:16px; }
+  .footer-figma .footer-right{ width:100%; text-align:center; margin-top:16px; }
+}
+
